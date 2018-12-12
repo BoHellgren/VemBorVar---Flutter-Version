@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/vem_bor_var.iml" filepath="$PROJECT_DIR$/vem_bor_var.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vem_bor_var_android.iml" filepath="$PROJECT_DIR$/vem_bor_var_android.iml" />
+    </modules>
+  </component>
+</project>
