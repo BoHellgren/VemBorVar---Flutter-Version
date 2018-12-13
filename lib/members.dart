@@ -33,6 +33,7 @@ const List<Member> members = const <Member>[
   const Member(lgh: '171', lmv: '1501', membername: 'Anders Tolleson'),
   const Member(lgh: '171', lmv: '1501', membername: 'Ditte Tolleson'),
   const Member(lgh: '221', lmv: '1001', membername: 'Mikaela Cadstedt'),
+  const Member(lgh: '221', lmv: '1001', membername: 'Johan Martin'),
   const Member(lgh: '222', lmv: '1002', membername: 'Michael Askebrink'),
   const Member(lgh: '222', lmv: '1002', membername: 'Jannica Askebrink'),
   const Member(lgh: '231', lmv: '1102', membername: 'Erik Kinnander'),
@@ -77,6 +78,7 @@ const List<Member> members = const <Member>[
     var nobody = Member(lgh: '', lmv: '', membername: ''); // for apt with only one member, or non-existing apartment
     var floors = []; // six or seven floors in each building
     var newfloors = [];
+
     // First insert members on each floor
     String apt = members[0].lgh;
     String floor = '';
@@ -94,6 +96,7 @@ const List<Member> members = const <Member>[
       }
     }
     floors.add(hits);
+
     // Now insert nobody-members where needed
     for (var i = 0; i < floors.length; i++) {
       hits = floors[i];
@@ -119,6 +122,13 @@ const List<Member> members = const <Member>[
       }
       newfloors.add(newhits);
     }
-    return newfloors;
+
+    // Finally reorder floors so that top floor comes first
+    floors = [];
+    for (var i=newfloors.length-1; i>=0; i--) {
+      floors.add(newfloors[i]);
+    }
+
+    return floors;
   }
 // }

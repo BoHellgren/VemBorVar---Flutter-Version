@@ -15,10 +15,12 @@ class _VemBorVarState extends State<VemBorVar> {
         theme: ThemeData.light(),
         home: Scaffold(
           backgroundColor: Theme.of(context).backgroundColor,
+
           appBar: PreferredSize(
-            child: MyAppBar(),
             preferredSize: const Size.fromHeight(58.0),
+            child: MyAppBar(),
           ),
+
           body: Column(
             children: [
               Image.asset(
@@ -27,7 +29,6 @@ class _VemBorVarState extends State<VemBorVar> {
                 //     height: 100.0,
                 fit: BoxFit.cover,
               ),
-
               Expanded(
                 child: Card(
                     //      color: Theme.of(context).primaryColor,
@@ -82,10 +83,11 @@ class _VemBorVarState extends State<VemBorVar> {
               // buttonSection,
             ],
           ),
+
           bottomNavigationBar: Padding(
             padding: const EdgeInsets.all(4.0),
             child: Text(
-              "2018-10-22",
+              "2018-12-12",
               textAlign: TextAlign.center,
             ),
           ),
@@ -97,20 +99,14 @@ class MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      centerTitle: true,
       title: Text(
-        'Vem Bor Var?',
+        'Vem Bor Var ?',
       ),
       actions: <Widget>[
         IconButton(
           icon: Icon(Icons.search),
           onPressed: () {
-            print('search button pressed');
-
-            /*   Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => MemberSearch()),
-            );  */
-
             Navigator.push(
                 context,
                 PageRouteBuilder(
@@ -127,7 +123,6 @@ class MyAppBar extends StatelessWidget {
                       Animation<double> secondaryAnimation,
                       Widget child,
                     ) {
-                      // print(secondaryAnimation);
                       return new SlideTransition(
                         position: new Tween<Offset>(
                           begin: const Offset(0.0, 1.0),
@@ -135,25 +130,7 @@ class MyAppBar extends StatelessWidget {
                         ).animate(animation),
                         child: child,
                       );
-                    }
-
-                    /*        transitionsBuilder: (BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation, Widget child) {
-                    return SlideTransition(
-                      position: new Tween<Offset>(
-                        begin: const Offset(-1.0, 0.0),
-                        end: Offset.zero,
-                      ).animate(animation),
-                      child: new SlideTransition(
-                        position: new Tween<Offset>(
-                          begin: Offset.zero,
-                          end: const Offset(0.0, 0.5),
-                        ).animate(secondaryAnimation),
-                        child: child,
-                      ),
-                    );
-                  },  */
-
-                    ));
+                    }));
           },
         ),
       ],
@@ -180,14 +157,10 @@ class HouseButton extends StatelessWidget {
         child: Hero(
           tag: _mask,
           transitionOnUserGestures: true,
-          /*       flightShuttleBuilder:
-              (flightContext, animation, direction,
-              fromContext, toContext) {
-            return
-              Icon(Icons.home, size:
-
-                150.0,);
-          }, */
+          flightShuttleBuilder:
+              (flightContext, animation, direction, fromContext, toContext) {
+              return Icon(Icons.domain, size: 50.0,);},
+         //   return Image.asset('images/128px-Elevator_icon.png');},
           child: SizedBox(
             //      height: 40.0,
             width: 160.0,

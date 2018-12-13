@@ -27,7 +27,9 @@ class _WhoLiveHereState extends State<WhoLiveHere> {
 
     int initialPage;
     int floor = int.parse(mask.substring(1, 2));
-    initialPage = mask.substring(0, 1) == '1' ? floor - 2 : floor + 4;
+    //
+
+    initialPage = mask.substring(0, 1) == '1' ? 14 - floor : 8 - floor;
     this.color = mask.substring(0, 1) == '1' ? Color(0xFF977981) : Color(0xFF7B919E);
 
     pageController =
@@ -51,12 +53,14 @@ class _WhoLiveHereState extends State<WhoLiveHere> {
   _WhoLiveHereState({Key key, @required this.mask, @required this.calledBy});
 
   void _goUp() {
-    pageController.nextPage(
+    direction = 0;
+    pageController.previousPage(
         duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
   }
 
   void _goDown() {
-    pageController.previousPage(
+    direction = 1;
+    pageController.nextPage(
         duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
   }
 
@@ -74,7 +78,7 @@ class _WhoLiveHereState extends State<WhoLiveHere> {
 
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
-      appBar: AppBar(title: Text('Vilka bor här?'), actions: <Widget>[
+      appBar: AppBar(centerTitle: true, title: Text('Vilka bor här ?'), actions: <Widget>[
         IconButton(
           icon: Icon(Icons.search),
           onPressed: () {
@@ -86,20 +90,23 @@ class _WhoLiveHereState extends State<WhoLiveHere> {
         ),
       ]),
       body: Column(children: [
-        HouseBadge(mask),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: HouseBadge(mask),
+        ),
         Container(
-          constraints: BoxConstraints(maxHeight: 450),
+          constraints: BoxConstraints(maxHeight: 400),
           child: PageView.builder(
               controller: pageController,
               //      itemExtent: 135.0,
               scrollDirection: Axis.vertical,
               onPageChanged: (page) {
                 setState(() {
-                  if (page > 5) {
-                    this.mask = '2' + (page - 4).toString();
+                  if (page < 7) {
+                    this.mask = '2' + (8 - page).toString();
                     this.color = Color(0xFF7B919E);
                   } else {
-                    this.mask = '1' + (page + 2).toString();
+                    this.mask = '1' + (14-page).toString();
                     this.color = Color(0xFF977981);
                   }
                   // print(this.mask);
@@ -110,37 +117,14 @@ class _WhoLiveHereState extends State<WhoLiveHere> {
                 return Card(
                     color: this.color,
                     margin: const EdgeInsets.all(8.0),
-                    child: Column(children: [
-                      Card(
-                        child: Column(children: [
-                          ListTile(
-                              title: Text(
-                                  '${floors[index][0].lgh}  ${floors[index][0].lmv}  ${floors[index][0].membername}')),
-                          ListTile(
-                              title: Text(
-                                  '${floors[index][1].lgh}  ${floors[index][1].lmv}  ${floors[index][1].membername}')),
-                        ]),
-                      ),
-                      Card(
-                        child: Column(children: [
-                          ListTile(
-                              title: Text(
-                                  '${floors[index][2].lgh}  ${floors[index][2].lmv}  ${floors[index][2].membername}')),
-                          ListTile(
-                              title: Text(
-                                  '${floors[index][3].lgh}  ${floors[index][3].lmv}  ${floors[index][3].membername}')),
-                        ]),
-                      ),
-                      Card(
-                        child: Column(children: [
-                          ListTile(
-                              title: Text(
-                                  '${floors[index][4].lgh}  ${floors[index][4].lmv}  ${floors[index][4].membername}')),
-                          ListTile(
-                              title: Text(
-                                  '${floors[index][5].lgh}  ${floors[index][5].lmv}  ${floors[index][5].membername}')),
-                        ]),
-                      ),
+                    child: Column(
+                     //   crossAxisAlignment: CrossAxisAlignment.start,
+                     //   mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          AptCard(floors[index], 1),
+                          AptCard(floors[index], 2),
+                          AptCard(floors[index], 3),
                     ]));
               }),
         ),
@@ -241,5 +225,30 @@ class HouseBadge extends StatelessWidget {
         ],
       ),
     ));
+  }
+}
+
+class AptCard extends StatelessWidget {
+  final floor;
+  final aptnum; // 1, 2 or 3
+  AptCard(this.floor, this.aptnum);
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 6.0),
+      child: Card(
+        child: Column(children: [
+          Text('  ${floor[(aptnum-1)*2].lgh}  ${floor[(aptnum-1)*2].lmv}  ${floor[(aptnum-1)*2].membername}'.padRight(99),
+              textAlign: TextAlign.left,
+              style: TextStyle(fontSize: 18.0, height: 2.0)),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 10.0),
+            child: Text('  ${floor[(aptnum-1)*2+1].lgh}  ${floor[(aptnum-1)*2+1].lmv}  ${floor[(aptnum-1)*2+1].membername}'.padRight(99),
+                textAlign: TextAlign.left,
+                style: TextStyle(fontSize: 18.0, height: 2.0)),
+          ),
+        ]),
+      ),
+    );
   }
 }
