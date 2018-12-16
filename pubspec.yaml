@@ -1,5 +1,5 @@
-name: lakes
-description: Demonstrates building a layout for the "Lakes" app.
+name: vemborvar
+description: Flutter version of Vem Bor Var app
 
 dependencies:
   flutter:
@@ -8,4 +8,4 @@ dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - images/logga.png
+    - images/

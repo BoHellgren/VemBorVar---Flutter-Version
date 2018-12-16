@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+// import 'package:flutter/scheduler.dart' show timeDilation;
 // import 'package:flutter/rendering.dart';
+// import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'wholivehere.dart';
 import 'membersearch.dart';
 
@@ -9,6 +11,7 @@ class VemBorVar extends StatefulWidget {
 }
 
 class _VemBorVarState extends State<VemBorVar> {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,11 +26,17 @@ class _VemBorVarState extends State<VemBorVar> {
 
           body: Column(
             children: [
-              Image.asset(
-                'images/logga.png',
-                //     width: 600.0,
-                //     height: 100.0,
-                fit: BoxFit.cover,
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  child: Image.asset(
+                    'images/logga.png',
+                         width: 332.0,
+                    //     height: 100.0,
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
               Expanded(
                 child: Card(
@@ -105,6 +114,7 @@ class MyAppBar extends StatelessWidget {
       ),
       actions: <Widget>[
         IconButton(
+      //    icon: Icon(Icons.search),
           icon: Icon(Icons.search),
           onPressed: () {
             Navigator.push(
@@ -159,15 +169,15 @@ class HouseButton extends StatelessWidget {
           transitionOnUserGestures: true,
           flightShuttleBuilder:
               (flightContext, animation, direction, fromContext, toContext) {
-              return Icon(Icons.domain, size: 50.0,);},
-         //   return Image.asset('images/128px-Elevator_icon.png');},
+           //   return Icon(Icons.domain, size: 50.0,);},
+            return Image.asset('images/32px-Elevator_icon.png');},
           child: SizedBox(
-            //      height: 40.0,
-            width: 160.0,
+            height: 43.0,
+            width: 148.0,
             child: Card(
                 color: Theme.of(context).buttonColor,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10.0),
+                  padding: const EdgeInsets.symmetric(vertical: 7.0),
                   child: Text(
                     _floorName,
                     textAlign: TextAlign.center,

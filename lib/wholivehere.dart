@@ -36,7 +36,7 @@ class _WhoLiveHereState extends State<WhoLiveHere> {
         PageController(initialPage: initialPage, viewportFraction: 0.85);
 
     this.floors = locateMembers();
-    
+
     timeDilation = 5.0;
   }
 
@@ -89,16 +89,15 @@ class _WhoLiveHereState extends State<WhoLiveHere> {
           },
         ),
       ]),
-      body: Column(children: [
+      body: ListView(children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: HouseBadge(mask),
         ),
         Container(
-          constraints: BoxConstraints(maxHeight: 400),
+          constraints: BoxConstraints(maxHeight: 390),
           child: PageView.builder(
               controller: pageController,
-              //      itemExtent: 135.0,
               scrollDirection: Axis.vertical,
               onPageChanged: (page) {
                 setState(() {
@@ -189,10 +188,11 @@ class HouseBadge extends StatelessWidget {
       //      height: 40.0,
       width: 500.0,
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           SizedBox(
-            width: 160.0,
+            width: 140.0,
             child: Card(
                 //   color: Theme.of(context).buttonColor,
                 color: floorcolor,
@@ -208,7 +208,7 @@ class HouseBadge extends StatelessWidget {
           Hero(
             tag: mask,
             child: SizedBox(
-              width: 160.0,
+              width: 140.0,
               child: Card(
                   //   color: Theme.of(context).buttonColor,
                   color: floorcolor,
@@ -236,18 +236,21 @@ class AptCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 6.0),
-      child: Card(
-        child: Column(children: [
-          Text('  ${floor[(aptnum-1)*2].lgh}  ${floor[(aptnum-1)*2].lmv}  ${floor[(aptnum-1)*2].membername}'.padRight(99),
-              textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 18.0, height: 2.0)),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 10.0),
-            child: Text('  ${floor[(aptnum-1)*2+1].lgh}  ${floor[(aptnum-1)*2+1].lmv}  ${floor[(aptnum-1)*2+1].membername}'.padRight(99),
+      child: Container(
+     //   constraints: BoxConstraints(maxHeight: 85.0),
+        child: Card(
+          child: Column(children: [
+            Text('  ${floor[(aptnum-1)*2].lgh}  ${floor[(aptnum-1)*2].lmv}  ${floor[(aptnum-1)*2].membername}'.padRight(99),
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 18.0, height: 2.0)),
-          ),
-        ]),
+                style: TextStyle(fontSize: 18.0, height: 1.5)),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10.0),
+              child: Text('  ${floor[(aptnum-1)*2+1].lgh}  ${floor[(aptnum-1)*2+1].lmv}  ${floor[(aptnum-1)*2+1].membername}'.padRight(99),
+                  textAlign: TextAlign.left,
+                  style: TextStyle(fontSize: 18.0, height: 1.5)),
+            ),
+          ]),
+        ),
       ),
     );
   }

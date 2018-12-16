@@ -14,8 +14,8 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="vem_bor_var"
-        android:icon="@mipmap/icon_150x150">
+        android:label="Vem Bor Var"
+        android:icon="@mipmap/launch">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

@@ -113,6 +113,7 @@ class _MemberSearchState extends State<MemberSearch> {
                   padding: new EdgeInsets.all(4.0),
                   child: Text(
                     '${hits[index].lgh}    ${hits[index].lmv}    ${hits[index].membername}  ',
+                      style: TextStyle(fontSize: 16.0, height: 0.9),
                   ),
                 ),
                 Icon(Icons.arrow_forward, size: 15.0),
