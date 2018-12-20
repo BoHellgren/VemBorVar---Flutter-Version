@@ -37,7 +37,7 @@ class _WhoLiveHereState extends State<WhoLiveHere> {
 
     this.floors = locateMembers();
 
-    timeDilation = 5.0;
+ //   timeDilation = 5.0;
   }
 
   dispose() {
