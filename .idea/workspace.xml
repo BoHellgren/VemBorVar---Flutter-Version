@@ -15,13 +15,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ea129a0-19bc-4a38-adb2-44e455e56f0f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/wholivehere.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/wholivehere.dart" afterDir="false" />
-    </list>
+    <list default="true" id="1ea129a0-19bc-4a38-adb2-44e455e56f0f" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
     <ignored path="$PROJECT_DIR$/.pub/" />
@@ -35,14 +29,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.dart" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-187">
+            <state relative-caret-position="-34">
               <caret line="160" column="10" lean-forward="true" selection-start-line="160" selection-start-column="10" selection-end-line="160" selection-end-column="10" />
               <folding>
                 <element signature="e#43#82#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="members.dart" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/members.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2125">
+              <caret line="125" column="59" selection-start-line="125" selection-start-column="59" selection-end-line="125" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -146,7 +149,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="870" />
     <option name="y" value="10" />
     <option name="width" value="1050" />
@@ -333,7 +336,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="14" show_stripe_button="false" />
@@ -353,11 +356,11 @@
       <window_info id="Captures" order="5" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2671141" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2671141" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" weight="0.5067114" />
       <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49798658" visible="true" weight="0.2542373" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49798658" visible="true" weight="0.2542373" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="right" id="Flutter Inspector" order="3" weight="0.20268457" />
       <window_info anchor="right" id="Preview" order="8" weight="0.3295302" />
@@ -471,13 +474,6 @@
     <entry file="file://$PROJECT_DIR$/images/128px-Elevator_icon.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/members.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2125">
-          <caret line="125" column="59" selection-start-line="125" selection-start-column="59" selection-end-line="125" selection-end-column="59" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/images/logo.png">
@@ -640,11 +636,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187">
+        <state relative-caret-position="-34">
           <caret line="160" column="10" lean-forward="true" selection-start-line="160" selection-start-column="10" selection-end-line="160" selection-end-column="10" />
           <folding>
             <element signature="e#43#82#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/members.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2125">
+          <caret line="125" column="59" selection-start-line="125" selection-start-column="59" selection-end-line="125" selection-end-column="59" />
         </state>
       </provider>
     </entry>
